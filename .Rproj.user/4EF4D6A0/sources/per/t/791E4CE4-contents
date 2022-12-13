@@ -19,12 +19,6 @@ ciq_ntrm_share_appln_suspense = col_double(),
 ciq_ntrm_misc_exp_not_written_off = col_double()),
 trim_ws = TRUE)
 
-
-fin_data_ann_igaap <- read_delim("Prowess Data/76729_1_75_20221212_125039_dat.txt",
-delim = "|", escape_double = FALSE, col_types = cols(ca_finance1_year = col_date(format = "%d-%m-%Y")),
-trim_ws = TRUE)
-
-
 dividend_data <- read_delim("Prowess Data/76729_1_125_20221212_125039_dat.txt",
 delim = "|", escape_double = FALSE, col_types = cols(div_announcement_date = col_date(format = "%d-%m-%Y")),
 trim_ws = TRUE)
@@ -45,7 +39,6 @@ delim = "|", escape_double = FALSE, trim_ws = TRUE)
 
 
 ############## Variable IDs ############
-
 fin_data_qtrly <- read_delim("Prowess Data/76729_1_100_20221212_125039_dat.txt",
                              delim = "|", escape_double = FALSE, col_types = cols(ciq_ntrm_date = col_date(format = "%d-%m-%Y"),
                                                                                   ciq_ntrm_share_appln_suspense = col_double(),
@@ -53,8 +46,6 @@ fin_data_qtrly <- read_delim("Prowess Data/76729_1_100_20221212_125039_dat.txt",
                              trim_ws = TRUE)
 fin_data_qtrly_dt= data.table::data.table(fin_data_qtrly)
 rm(fin_data_qtrly)
-fin_data_qtrly_dt[,total_assets:= sum(ciq_ntrm_net_fixed_assets , ciq_ntrm_cap_work_in_progress , ciq_ntrm_investments , ciq_ntrm_other_non_current_assets , ciq_ntrm_curr_assets_loans_n_advns , ciq_ntrm_other_assets , ciq_ntrm_deferred_tax_asst , ciq_ntrm_misc_exp_not_written_off, na.rm=TRUE)]
-fin_data_qtrly_dt[, cash_holding := ciq_ntrm_cash_and_bank_balances/total_assets]
 
 ## Return Data ####
 return_data <- read_delim("Prowess Data/76729_1_120_20221212_125039_dat.txt",
@@ -62,9 +53,23 @@ return_data <- read_delim("Prowess Data/76729_1_120_20221212_125039_dat.txt",
                           trim_ws = TRUE)
 return_data_dt = data.table::data.table(return_data)
 rm(return_data)
-## Adding market cap data 
-fin_data_qtrly_dt <- merge(fin_data_qtrly_dt, return_data_dt[,c(1,3,7,10)], by.x = c("ciq_interim_cocode","ciq_ntrm_date"), by.y = c("co_code","co_stkdate"))
-fin_data_qtrly_dt[, book_market := equity_bv_on_stkdate/nse_market_cap]
-fin_data_qtrly_dt[, cashproductvity := sum(nse_market_cap, ciq_ntrm_long_term_borrowings + total_assets*-1, na.rm=TRUE)/ciq_ntrm_cash_and_bank_balances]
 
-# fin_data_qtrly_dt[, change_in_sales := ciq_ntrm_net_sales - lag(ciq_ntrm_net_sales,1), by= ciq_interim_cocode]
+
+
+## Adding market cap and book value data 
+fin_data_qtrly_dt <- merge(fin_data_qtrly_dt, return_data_dt[,c(1,3,7,10)], by.x = c("ciq_interim_cocode","ciq_ntrm_date"), by.y = c("co_code","co_stkdate"))
+fin_data_qtrly_dt[order(fin_data_qtrly_dt[,1],DT[,2])]
+fin_data_qtrly_dt[,date_diff := ciq_ntrm_date - shift(ciq_ntrm_date), by = ciq_interim_cocode] ## for compounding quarterly changes
+#### variables calculation
+
+fin_data_qtrly_dt[, book_market := equity_bv_on_stkdate/nse_market_cap]
+
+##### Based on Total Assets ######
+for (i in 1:nrow(fin_data_qtrly_dt)) {
+  print (i)
+  fin_data_qtrly_dt$total_assets[i] = sum(fin_data_qtrly_dt$ciq_ntrm_net_fixed_assets[i] , fin_data_qtrly_dt$ciq_ntrm_cap_work_in_progress[i] , fin_data_qtrly_dt$ciq_ntrm_investments[i] , fin_data_qtrly_dt$ciq_ntrm_other_non_current_assets[i] , fin_data_qtrly_dt$ciq_ntrm_curr_assets_loans_n_advns[i] , fin_data_qtrly_dt$ciq_ntrm_other_assets[i] , fin_data_qtrly_dt$ciq_ntrm_deferred_tax_asst[i] , fin_data_qtrly_dt$ciq_ntrm_misc_exp_not_written_off[i], na.rm = TRUE)
+  }
+
+fin_data_qtrly_dt[total_assets > 0, cash_holding := ciq_ntrm_cash_and_bank_balances/total_assets]
+fin_data_qtrly_dt[!is.na(total_assets), cashproductvity := (nse_market_cap + ciq_ntrm_long_term_borrowings - total_assets)/ciq_ntrm_cash_and_bank_balances]
+fin_data_qtrly_dt[!is.na(ciq_ntrm_net_sales) & !is.na(shift(ciq_ntrm_net_sales) & date_diff < 95), change_in_sales := ciq_ntrm_net_sales - shift(ciq_ntrm_net_sales), by= ciq_interim_cocode]
