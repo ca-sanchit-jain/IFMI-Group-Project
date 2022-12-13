@@ -1,0 +1,51 @@
+co_code|company_name|isin_code_equity|co_industry_type|nic_prod_code|nic_name
+5747|ADANI ENTERPRISES LTD.|INE423A01024|1|46610|Wholesale of solid, liquid and gaseous fuels and related products
+18102|APOLLO HOSPITALS ENTERPRISE LTD.|INE437A01024|1|86100|Hospital activities
+22859|ASIAN PAINTS LTD.|INE021A01026|1|20221|Manufacture of paints and varnishes, enamels or lacquers
+28897|BAJAJ FINANCE LTD.|INE296A01024|2|64920|Other credit granting
+33873|BHARAT PETROLEUM CORPN. LTD.|INE029A01011|1|19209|Manufacture of other petroleum n.e.c. (includes Manufacture of petroleum jelly, micro-crystalline petroleum wax, slack wax, ozokerite, lignite wax, petroleum coke, petroleum bitumen and other residues of petroleum oils or of oils obtained from bituminous minerals)
+34162|BHARTI AIRTEL LTD.|INE397D01024|1|61209|Activities of other wireless telecommunications activities
+38924|BRITANNIA INDUSTRIES LTD.|INE216A01030|1|10712|Manufacture of biscuits, cakes, pastries, rusks etc.
+47858|CIPLA LTD.|INE059A01026|1|21002|Manufacture of allopathic pharmaceutical preparations
+48799|COAL INDIA LTD.|INE522F01014|2|64300|Trusts, funds and other financial vehicles
+61957|DIVI'S LABORATORIES LTD.|INE361B01024|1|2100|Manufacture of pharmaceuticals, medicinal chemical and botanical products
+62987|DR. REDDY'S LABORATORIES LTD.|INE089A01023|1|21002|Manufacture of allopathic pharmaceutical preparations
+66185|EICHER MOTORS LTD.|INE066A01021|1|30911|Manufacture of motorcycles, scooters, mopeds etc. and their engine
+85447|GRASIM INDUSTRIES LTD.|INE047A01021|1|20302|Manufacture of synthetic or artificial filament staple fibre not textured
+86597|ADANI PORTS & SPECIAL ECONOMIC ZONE LTD.|INE742F01042|1|52220|Service activities incidental to water transportation
+88258|H C L TECHNOLOGIES LTD.|INE860A01027|1|62013|Providing software support and maintenance to the clients
+88297|H D F C BANK LTD.|INE040A01034|3|64191|Monetary intermediation of commercial banks, saving banks. postal savings bank and discount houses
+88320|H D F C LIFE INSURANCE CO. LTD.|INE795G01014|2|65110|Life insurance
+92590|HERO MOTOCORP LTD.|INE158A01026|1|30911|Manufacture of motorcycles, scooters, mopeds etc. and their engine
+93902|HINDALCO INDUSTRIES LTD.|INE038A01020|1|24202|Manufacture of Aluminium from alumina and by other methods and products of aluminium and alloys
+94080|HINDUSTAN UNILEVER LTD.|INE030A01027|1|20239|Manufacture of other perfumes and toilet preparations n.e.c.
+95632|HOUSING DEVELOPMENT FINANCE CORPN. LTD.|INE001A01036|2|64192|Activities of specialized institutions granting credit for house purchases that also take deposits
+96379|I C I C I BANK LTD.|INE090A01021|3|64191|Monetary intermediation of commercial banks, saving banks. postal savings bank and discount houses
+97066|I T C LTD.|INE154A01025|1|12003|Manufacture of cigarettes, cigarette tobacco
+100224|INDUSIND BANK LTD.|INE095A01012|3|64191|Monetary intermediation of commercial banks, saving banks. postal savings bank and discount houses
+100632|INFOSYS LTD.|INE009A01021|1|62013|Providing software support and maintenance to the clients
+109874|J S W STEEL LTD.|INE019A01038|1|24105|Manufacture of hot-rolled and cold-rolled products of steel
+122573|KOTAK MAHINDRA BANK LTD.|INE237A01028|3|64191|Monetary intermediation of commercial banks, saving banks. postal savings bank and discount houses
+125123|ULTRATECH CEMENT LTD.|INE481G01011|1|23941|Manufacture of clinkers and cement
+127106|LARSEN & TOUBRO LTD.|INE018A01030|1|42209|Construction of utility projects n.e.c.
+136444|MAHINDRA & MAHINDRA LTD.|INE101A01026|1|2910|Manufacture of motor vehicles
+136494|TECH MAHINDRA LTD.|INE669C01036|1|62013|Providing software support and maintenance to the clients
+140829|MARUTI SUZUKI INDIA LTD.|INE585B01010|1|29101|Manufacture of passenger cars
+155695|N T P C LTD.|INE733E01010|1|35103|Electric power generation by non-coal based thermal (e.g. diesel, gas )
+157827|NESTLE INDIA LTD.|INE239A01016|1|11049|Manufacture of other non-alcoholic beverages n.e.c.
+163226|OIL & NATURAL GAS CORPN. LTD.|INE213A01029|1|0610|Extraction of crude petroleum
+164646|TATA CONSULTANCY SERVICES LTD.|INE467B01029|1|62013|Providing software support and maintenance to the clients
+177758|POWER GRID CORPN. OF INDIA LTD.|INE752E01010|1|35107|Transmission of electric energy
+196667|RELIANCE INDUSTRIES LTD.|INE002A01018|1|19209|Manufacture of other petroleum n.e.c. (includes Manufacture of petroleum jelly, micro-crystalline petroleum wax, slack wax, ozokerite, lignite wax, petroleum coke, petroleum bitumen and other residues of petroleum oils or of oils obtained from bituminous minerals)
+201643|S B I LIFE INSURANCE CO. LTD.|INE123W01016|2|65110|Life insurance
+215829|U P L LTD.|INE628A01036|1|2021|Manufacture of pesticides and other agrochemical products
+236328|STATE BANK OF INDIA|INE062A01020|3|64191|Monetary intermediation of commercial banks, saving banks. postal savings bank and discount houses
+239726|SUN PHARMACEUTICAL INDS. LTD.|INE044A01036|1|21002|Manufacture of allopathic pharmaceutical preparations
+248093|TATA MOTORS LTD.|INE155A01022|1|29102|Manufacture of commercial vehicles such as vans, lorries, over-the-road tractors for semi-trailers etc.
+248136|TATA STEEL LTD.|INE081A01020|1|24105|Manufacture of hot-rolled and cold-rolled products of steel
+248186|TATA CONSUMER PRODUCTS LTD.|INE192A01025|1|10791|Processing and blending of tea including Manufacture of instant tea
+251664|TITAN COMPANY LTD.|INE280A01028|1|32111|Manufacture of jewellery of gold, silver and other precious or base metal metal clad with precious metals or precious or semi-precious stones, or of combinations of precious metal and precious or semi-precious stones or of other materials
+256066|AXIS BANK LTD.|INE238A01034|3|64191|Monetary intermediation of commercial banks, saving banks. postal savings bank and discount houses
+272724|WIPRO LTD.|INE075A01022|1|62013|Providing software support and maintenance to the clients
+374518|BAJAJ AUTO LTD.|INE917I01010|1|30911|Manufacture of motorcycles, scooters, mopeds etc. and their engine
+374519|BAJAJ FINSERV LTD.|INE918I01026|2|64300|Trusts, funds and other financial vehicles
