@@ -44,7 +44,8 @@ rm(return_data)
 
 ## Adding market cap and book value data 
 fin_data_qtrly_dt <- merge(fin_data_qtrly_dt, return_data_dt[,c(1,3,7,10)], by.x = c("ciq_interim_cocode","ciq_ntrm_date"), by.y = c("co_code","co_stkdate"))
-fin_data_qtrly_dt[order(fin_data_qtrly_dt[,1],DT[,2])]
+
+# fin_data_qtrly_dt[order(fin_data_qtrly_dt[,1],fin_data_qtrly_dt[,2])]
 fin_data_qtrly_dt[,date_diff := ciq_ntrm_date - shift(ciq_ntrm_date), by = ciq_interim_cocode] ## for compounding quarterly changes
 
 fin_data_qtrly_dt[, book_market := equity_bv_on_stkdate/nse_market_cap]
